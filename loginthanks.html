@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanks For logging In Your Account</title>
+    <style>
+        body{
+            background-image: url('bg.jpg');
+            display: flex;
+    justify-content:center;
+    align-items:center;
+    min-height: 100vh;
+        }
+        #typing-text{
+    font-size: 50px;
+    color: #1b8eb1;
+    font-weight: bolder;
+    text-align: center;
+  }
+    </style>
+</head>
+<body>
+    <div id="typing-container">
+        <p id="typing-text"></p>
+      </div>
+      
+       <script>
+        const textElement = document.getElementById('typing-text');
+        const textToType = "We Welcome You Again Here.We always wait for your return to our website.The happiest moment for me is one when you logged in again.Thanks For logging In Your Account";
+        let index = 0;
+
+        function typeText() {
+            if (index < textToType.length) {
+                textElement.textContent += textToType.charAt(index);
+                index++;
+                setTimeout(typeText, 100); // Adjust typing speed (milliseconds)
+            } else {
+                // Animation finished, reset index and clear text
+                index = 0;
+                textElement.textContent = "";
+                setTimeout(typeText, 2000); // Delay before starting animation again
+            }
+        }
+
+        typeText(); // Start the typing animation
+    </script>
+</body>
+</html>
